@@ -1,2 +1,11 @@
-[phases.setup]
-nixPkgs = ["nodejs_20", "yarn"]
+[phases.build]
+cmds = ["yarn install", "yarn build"]
+
+[phases.start]
+cmds = ["yarn serve"]
+
+[start]
+cmd = "yarn serve"
+
+[variables]
+PORT = "3000"
