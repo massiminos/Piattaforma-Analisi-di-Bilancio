@@ -11,4 +11,4 @@ cmds = ["yarn install --frozen-lockfile"]
 cmds = ["yarn build"]
 
 [start]
-cmd = "serve -s build -l 0.0.0.0:3000"
+cmd = "serve -s build -l tcp://0.0.0.0:3000"
