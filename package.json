@@ -15,8 +15,7 @@
     "react-router-dom": "^7.7.1",
     "react-textarea-autosize": "^8.5.9",
     "recharts": "^3.1.0",
-    "sweetalert2": "^11.22.2",
-    "serve": "^14.2.0"
+    "sweetalert2": "^11.22.2"
   },
   "devDependencies": {
     "@types/react": "^19.1.8",
@@ -25,8 +24,9 @@
     "typescript": "^5.8.3"
   },
   "scripts": {
-    "start": "serve -s build",
+    "start": "react-scripts start",
     "build": "react-scripts build",
+    "serve": "serve -s build -l 0.0.0.0:3000",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
