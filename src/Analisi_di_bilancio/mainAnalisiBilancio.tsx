@@ -69,6 +69,7 @@ export default function WelcomeScreen() {
 }, [showSubMenu, showListaAnalisi]);
 
 
+
   // schermata iniziale
   return (
     <div className={`welcome-container ${isTransitioning ? "fade-out" : ""}`}>
@@ -77,7 +78,7 @@ export default function WelcomeScreen() {
         Piattaforma Analisi di Bilancio
       </h1>
 
-      <div className="button-group-DAB" ref={menuRef}>
+      <div className="button-group-DAB">
         <div className="button-group-DAB">
           <button
             className={`big-button ${activeButton === "nuova" ? "active-button" : ""}`}
@@ -90,7 +91,7 @@ export default function WelcomeScreen() {
           </button>
 
           {showSubMenu && (
-            <div className="submenu-modern">
+            <div className="submenu-modern" ref={menuRef}>
               <button
                 className="submenu-option"
                 onClick={() => {
@@ -129,7 +130,7 @@ export default function WelcomeScreen() {
           Recupera Analisi
         </button>
         {showListaAnalisi && (
-          <div className="submenu-modern">
+          <div className="submenu-modern" ref={menuRef}>
             {listaAnalisi.length === 0 && <div>Nessuna analisi trovata.</div>}
             {listaAnalisi.map((nome) => (
               <button
@@ -149,13 +150,6 @@ export default function WelcomeScreen() {
             display: "flex", alignItems: "center", justifyContent: "center", zIndex: 9999, cursor:"wait"
           }}
         >
-          {/*<div style={{textAlign: "center"}}>
-            <img
-              src="icons8-dots-loading.gif"
-              alt="Caricamento in corso..."
-              style={{ width: "128px", height: "128px"}}
-            />
-        </div>*/}
       </div>
     )}
     </div>
