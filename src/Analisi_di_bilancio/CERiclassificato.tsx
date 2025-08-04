@@ -60,15 +60,15 @@ const rows = [
   ["Rappporti di conto economico", "", "", ""],
   ["Costo del venduto", formatCurrency(vars.CE_Riclassificato_B38), "Altri ricavi/Ricavi", percentForm(vars.Bilancio_B225/vars.Bilancio_B220)],
   ["Costo del venduto/Ricavi", percentForm((dataBilancio.B229+vars.Bilancio_C85-vars.Bilancio_B85)/vars.CE_Riclassificato_B5), "Proventi finanziari/Ricavi", percentForm(vars.CE_Riclassificato_D6/vars.CE_Riclassificato_B5)],
-  ["Costo dei servizi/Ricavi", percentForm(dataBilancio.B230/dataBilancio.B221), "Proventi sraordinari/Ricavi",percentForm(vars.CE_Riclassificato_B40)],
-  ["Costo del personale/Ricavi", percentForm(dataBilancio.B233/dataBilancio.B221), "Costo medio del personale", formatCurrency(CE_Riclassificato_41 == Infinity? 0 : CE_Riclassificato_41)],
-  ["Ammortamenti/Ricavi", percentForm(dataBilancio.B239+dataBilancio.B240/dataBilancio.B221), "Ricavi per dipendente", formatCurrency(CE_Riclassificato_42 == Infinity? 0 : CE_Riclassificato_42)],
-  ["Altri costi/Ricavi", percentForm(dataBilancio.B246/dataBilancio.B221), "Debito finanziario/Ricavi", percentForm((vars.Margini_Patrimoniali_B13+vars.Margini_Patrimoniali_B18)/vars.Bilancio_B220)],
-  ["Oneri finanziari/Ricavi", percentForm(vars.Bilancio_B266/dataBilancio.B221), "EBITDA/Debito finanziario", percentForm(vars.CE_Riclassificato_B15/(vars.Margini_Patrimoniali_B13+vars.Margini_Patrimoniali_B18))],
+  ["Costo dei servizi/Ricavi", percentForm(vars.CE_Riclassificato_B40), "Proventi sraordinari/Ricavi",percentForm(vars.CE_Riclassificato_D40)],
+  ["Costo del personale/Ricavi", percentForm(vars.CE_Riclassificato_B41), "Costo medio del personale", formatCurrency(CE_Riclassificato_41 == Infinity? 0 : CE_Riclassificato_41)],
+  ["Ammortamenti/Ricavi", percentForm((dataBilancio.B239+dataBilancio.B240)/vars.Bilancio_B220), "Ricavi per dipendente", formatCurrency(CE_Riclassificato_42 == Infinity? 0 : CE_Riclassificato_42)],
+  ["Altri costi/Ricavi", percentForm(dataBilancio.B246/vars.Bilancio_B220), "Debito finanziario/Ricavi", percentForm((vars.Margini_Patrimoniali_B13+vars.Margini_Patrimoniali_B18)/vars.Bilancio_B220)],
+  ["Oneri finanziari/Ricavi", percentForm(vars.Bilancio_B266/vars.Bilancio_B220), "EBITDA/Debito finanziario", percentForm(vars.CE_Riclassificato_B15/(vars.Margini_Patrimoniali_B13+vars.Margini_Patrimoniali_B18))],
   ["Oneri straordinari/Ricavi", percentForm(vars.CE_Riclassificato_B45), "EBIT/Debito finanziario", percentForm(vars.CE_Riclassificato_B18/(vars.Margini_Patrimoniali_B13+vars.Margini_Patrimoniali_B18))],
-  ["Imposte/Ricavi", percentForm(vars.Bilancio_B293/dataBilancio.B221), "EBIT/Totale attivo", percentForm(vars.CE_Riclassificato_B18/vars.SP_Riclasificato_B21)],
-  [`Cash Flow ${dataDAzienda.B17}`, formatCurrency(dataBilancio.B221+vars.Bilancio_B272+dataBilancio.B245+dataBilancio.B244+dataBilancio.B239+dataBilancio.B240+dataBilancio.B241+dataBilancio.B242+dataBilancio.B235), "EBITDA/OF", (vars.CE_Riclassificato_B15/vars.Bilancio_B266).toFixed(2)],
-  [`Cash Flow ${dataDAzienda.B17}`, formatCurrency(dataBilancio.C221+vars.Bilancio_C272+dataBilancio.C245+dataBilancio.C244+dataBilancio.C239+dataBilancio.C240+dataBilancio.C241+dataBilancio.C242+dataBilancio.C235), "Utile/Totale Attivo", percentForm(vars.Bilancio_B297/vars.SP_Riclasificato_B21)],
+  ["Imposte/Ricavi", percentForm(vars.Bilancio_B293/vars.Bilancio_B220), "EBIT/Totale attivo", percentForm(vars.CE_Riclassificato_B18/vars.SP_Riclasificato_B21)],
+  [`Cash Flow ${dataDAzienda.B17}`, formatCurrency(vars.Bilancio_B292+vars.Bilancio_B272+dataBilancio.B245+dataBilancio.B244+dataBilancio.B239+dataBilancio.B240+dataBilancio.B241+dataBilancio.B242+dataBilancio.B235), "EBITDA/OF", (vars.CE_Riclassificato_B15/vars.Bilancio_B266).toFixed(2)],
+  [`Cash Flow ${dataDAzienda.B17 -1}`, formatCurrency(vars.Bilancio_C292+vars.Bilancio_C272+dataBilancio.C245+dataBilancio.C244+dataBilancio.C239+dataBilancio.C240+dataBilancio.C241+dataBilancio.C242+dataBilancio.C235), "Utile/Totale Attivo", percentForm(vars.Bilancio_B297/vars.SP_Riclasificato_B21)],
 ];
   
 
