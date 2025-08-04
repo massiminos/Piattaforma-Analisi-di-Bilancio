@@ -55,7 +55,7 @@ const rows = [
   ["Disponibilità", formatCurrency(vars.Andamenti_B32),  formatCurrency(vars.Andamenti_F32),  formatCurrency(vars.SP_Riclasificato_B36)],//////////////////
   ["Immobilizzazioni", formatCurrency(vars.Bilancio_D8),  formatCurrency(vars.Bilancio_C8) , formatCurrency(vars.Bilancio_B8)],////////////////////////
   ["Passivo Corrente", formatCurrency(vars.Andamenti_B34) , formatCurrency(vars.Andamenti_F34) , formatCurrency(vars.SP_Riclasificato_D28)],/////////////////
-  ["Passivo Consolidato", formatCurrency(vars.Andamenti_F35),  formatCurrency(vars.Andamenti_F35) , formatCurrency(vars.SP_Riclasificato_D33)],////////////////////
+  ["Passivo Consolidato", formatCurrency(vars.Andamenti_B35),  formatCurrency(vars.Andamenti_F35) , formatCurrency(vars.SP_Riclasificato_D33)],////////////////////
   ["Patrimonio Netto", formatCurrency(vars.Bilancio_D132), formatCurrency(vars.Bilancio_C132),  formatCurrency(vars.Bilancio_B132)],///////////////////
   ["Margine Primario di Struttura",  formatCurrency(vars.Bilancio_D132-vars.Bilancio_D8), formatCurrency(vars.Bilancio_C132-vars.Bilancio_C8), formatCurrency(vars.Bilancio_B132-vars.Bilancio_B8)],//////////////////////////
   ["Margine Secondario di Struttura",  formatCurrency((vars.Bilancio_D132+vars.Andamenti_B35)-vars.Bilancio_D8), formatCurrency((vars.Bilancio_C132+vars.Andamenti_F35)-vars.Bilancio_C8), formatCurrency((vars.Bilancio_B132+vars.SP_Riclasificato_D33)-vars.Bilancio_B8)],////////////////////////////////
