@@ -262,7 +262,7 @@ export default function Bilancio({
     ["- entro 12 mesi", "B194", "C194", "D194"],
     ["- oltre 12 mesi", "B195", "C195", "D195"],
     ["12) Debiti tributari", formatCurrency(vars.Bilancio_B196), formatCurrency(vars.Bilancio_C196), formatCurrency(vars.Bilancio_D196)],
-    ["- entro 12 mesi", formatCurrency(vars.Bilancio_B197), "C197", "D197"],
+    ["- entro 12 mesi", "B197", "C197", "D197"],
     ["- oltre 12 mesi", "B198", "C198", "D198"],
     ["13) Debiti verso istituti di previdenza e sicurezza sociale", formatCurrency(vars.Bilancio_B199), formatCurrency(vars.Bilancio_C199), formatCurrency(vars.Bilancio_D199)],
     ["- entro 12 mesi", "B200", "C200", "D200"],
@@ -284,7 +284,7 @@ export default function Bilancio({
     ["H) Nostri beni presso terzi", "B216", "C216", "D216"],
     ["I) Beni in leasing riscattati", "B217", "C217", "D217"],
     ["L) Altri", "B218", "C218", "D218"],
-    ["CONTO ECONOMICO", "B219", "C219", "D219"],
+    ["CONTO ECONOMICO", "", "", ""],/// 219 vuoto
     ["A) Valore della produzione", formatCurrency(vars.Bilancio_B220), formatCurrency(vars.Bilancio_C220), formatCurrency(vars.Bilancio_D220)],
     ["1) Ricavi delle vendite e delle prestazioni", "B221", "C221", "D221"],
     ["2) Variazione rimanenze prodotti in corso di lavor., semilavorati e finiti", "B222", "C222", "D222"],
@@ -359,7 +359,7 @@ export default function Bilancio({
     ["- Varie", "B291", "C291", "D291"],
     ["Risultato prima delle imposte", formatCurrency(vars.Bilancio_B292), formatCurrency(vars.Bilancio_C292), formatCurrency(vars.Bilancio_D292)],
     ["20) Imposte sul reddito dell'esercizio", formatCurrency(vars.Bilancio_B293), formatCurrency(vars.Bilancio_C293), formatCurrency(vars.Bilancio_D293)],
-    ["a) Imposte correnti", formatCurrency(vars.Bilancio_B294), formatCurrency(vars.Bilancio_C294), formatCurrency(vars.Bilancio_D294)],
+    ["a) Imposte correnti", "B294", "C294", "D294"],
     ["b) Imposte differite", "B295", "C295", "D295"],
     ["b) Imposte anticipate", "B296", "C296", "D296"],
     ["21) Utile (Perdita) dell'esercizio", formatCurrency(vars.Bilancio_B297), formatCurrency(vars.Bilancio_C297), formatCurrency(vars.Bilancio_D297)],
@@ -370,7 +370,7 @@ export default function Bilancio({
     63, 64, 66, 67, 69, 70, 72, 73, 76, 80, 83, 84, 90, 91, 94, 97,
     100, 103, 106, 109, 112, 115, 123, 127, 130, 131, 138, 151, 152, 158,
     159, 162, 165, 168, 171, 174, 177, 180, 183, 186, 189, 192, 195, 198,
-    201, 204, 207, 209, 214, 219, 224, 227, 231, 237, 246, 247, 248, 252,
+    201, 204, 207, 209, 214, 218, 219, 224, 227, 231, 237, 246, 247, 248, 252,
     253, 260, 265, 271, 272, 277, 284, 288, 289, 291, 292, 293, 296
   ];
 
@@ -510,15 +510,19 @@ export default function Bilancio({
                               [cell]: e.target.value,
                             }))
                           }
-                          onBlur={() => handleBlur(cell)}
-                          variant="outlined"
-                          size="small"
+                          onBlur ={() => handleBlur(cell)}
+                          variant ="outlined"
+                          size ="small"
+                          className = {darkBlueRows.includes(originalIndex) || lightBlueRows.includes(originalIndex) ? "entryBilancio" : ""}
                           fullWidth
-                          inputProps={{
+                          inputProps ={{
                             style: {
                               fontSize: "14px",
                               textAlign: "right",
                               fontWeight: 500,
+                              color: darkBlueRows.includes(originalIndex) || lightBlueRows.includes(originalIndex) ? "#fff": "#000",
+                              border: darkBlueRows.includes(originalIndex) || lightBlueRows.includes(originalIndex) ? "1px solid #fff": "1px solid #ccc",
+                              borderRadius: darkBlueRows.includes(originalIndex) || lightBlueRows.includes(originalIndex) ? "4px" : "1px"
                             },
                           }}
                         />
