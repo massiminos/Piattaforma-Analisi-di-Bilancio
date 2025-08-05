@@ -53,7 +53,7 @@ const rows = [
   ["LIQUIDITA' IMMEDIATA", formatCurrency(vars.SP_Riclasificato_B28), "PASSIVO CORRENTE", formatCurrency(vars.SP_Riclasificato_D28)],
   ["Cassa", formatCurrency(dataBilancio.B127+dataBilancio.B126), "Debiti Verso Banche", formatCurrency(dataBilancio.B170)],
   ["Banca", formatCurrency(dataBilancio.B125), "Debiti Verso Fornitori", formatCurrency(dataBilancio.B179)],
-  ["Titoli Negoziabili", formatCurrency(vars.Bilancio_B116), "Debiti per Imposte", formatCurrency(vars.Bilancio_B197+dataBilancio.B200)],
+  ["Titoli Negoziabili", formatCurrency(vars.Bilancio_B116), "Debiti per Imposte", formatCurrency(dataBilancio.B197+dataBilancio.B200)],
   ["LIQUIDITA' DIFFERITA", formatCurrency(vars.SP_Riclasificato_B32), "Altri Debiti a Breve", formatCurrency(vars.SP_Riclasificato_D32)],
   ["Crediti Verso Clienti a Breve Termine", formatCurrency(dataBilancio.B93), "PASSIVO CONSOLIDATO", formatCurrency(vars.SP_Riclasificato_D33)],
   ["Crediti Diversi a Breve Termine", formatCurrency(vars.SP_Riclasificato_B34), "Mutui Passivi", formatCurrency(dataBilancio.B171)],
