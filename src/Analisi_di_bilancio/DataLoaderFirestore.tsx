@@ -1,8 +1,7 @@
-import { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import { signInWithEmailAndPassword, signOut, deleteUser, reauthenticateWithPopup, EmailAuthProvider, reauthenticateWithCredential } from "firebase/auth";
-import { getFirestore, doc, getDoc, updateDoc, arrayUnion, arrayRemove, onSnapshot, setDoc, deleteDoc } from "firebase/firestore";
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, GoogleAuthProvider } from "firebase/auth";
+import { getFirestore, doc, getDoc, setDoc, deleteDoc } from "firebase/firestore";
+import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider } from "firebase/auth";
 import { BilancioOb, Dati_Azienda } from "./Bilancio&DatiAzienda.ts";
 import { collection, getDocs } from "firebase/firestore";
 
@@ -157,7 +156,7 @@ export async function saveUserDoc(dataDAzienda: typeof Dati_Azienda, dataBilanci
     }
     const nomeDocumento = `${dataDAzienda.B11} - ${dataDAzienda.B17}`;
     const path = doc(db, "utenti", user.uid, "analisi", nomeDocumento);
-
+    
     await setDoc(path, {
       BilancioOb: dataBilancio,
       Dati_Azienda: dataDAzienda
@@ -170,7 +169,6 @@ export async function saveUserDoc(dataDAzienda: typeof Dati_Azienda, dataBilanci
     return false;
   }
 }
-
 
 //recupera documenti 
 export async function getAnalisi(): Promise<string[] | null> {
