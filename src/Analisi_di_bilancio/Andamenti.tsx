@@ -90,7 +90,7 @@ const rows = [
   ["EBITDA (MOL)", formatCurrency(vars.Andamenti_B68) , formatCurrency(vars.Andamenti_F68) , formatCurrency(vars.CE_Riclassificato_B15)],////////////////////////
   ["EBIT (RO)", formatCurrency(vars.Andamenti_B69) , formatCurrency(vars.Andamenti_F69),  formatCurrency(vars.CE_Riclassificato_B18)],//////////////////////////
   ["EBIT/OF", (vars.Andamenti_B69/vars.Bilancio_D266).toFixed(2), (vars.Andamenti_F69/vars.Bilancio_C266).toFixed(2), (vars.CE_Riclassificato_B18/vars.Bilancio_B266).toFixed(2)],//////////////////////////////////
-  ["Marginalità Lorda", percentForm(vars.Andamenti_F68/vars.Andamenti_F79), percentForm(vars.Andamenti_F68/vars.Andamenti_F79), percentForm(vars.CE_Riclassificato_B15/vars.CE_Riclassificato_B9)],///////////////////////////
+  ["Marginalità Lorda", percentForm(vars.Andamenti_B68/vars.Andamenti_B79), percentForm(vars.Andamenti_F68/vars.Andamenti_F79), percentForm(vars.CE_Riclassificato_B15/vars.CE_Riclassificato_B9)],///////////////////////////
   ["Incidenza del Costo del Lavoro", percentForm(vars.Bilancio_D232/vars.Bilancio_D228), percentForm(vars.Bilancio_C232/vars.Bilancio_C228), percentForm(vars.Bilancio_B232/vars.Bilancio_B228)],////////////////////////
   ["Incidenza del Costo Mat. Prime", percentForm(vars.Andamenti_B72), percentForm(vars.Andamenti_F72), percentForm(vars.CE_Riclassificato_D27)],////////////////////////
   ["Incidenza dei Servizi", percentForm(vars.Andamenti_B73), percentForm(vars.Andamenti_F73), percentForm(vars.CE_Riclassificato_D28)],/////////////////////
