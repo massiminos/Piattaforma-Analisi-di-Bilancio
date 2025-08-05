@@ -283,12 +283,12 @@ export default function DashboardAB() {
       <div className="top-bar" style={{
         position: "fixed", top: 0, left: 0, width: "100%", height: "60px",
         backgroundColor: "#003366", color: "white", display: "flex",
-        alignItems: "center", justifyContent: "center", zIndex: 1000,
-        boxShadow: "0 2px 4px rgba(0,0,0,0.2)"
+        alignItems: "center", padding: "0", zIndex: 1000,
+        boxShadow: "0 2px 4px rgba(0,0,0,0.2)", justifyContent: "space-between"
       }}>
-        <h1>{dataDAzienda.B11}</h1>
+        {/*<h1>{dataDAzienda.B11}</h1>*/}
 
-        <div style={{position: "absolute", left: 90, display: "flex", alignItems: "center", gap: 90}}>
+        <div style={{ width:"14%", minWidth: "190px", maxWidth: "224px", display: "flex", justifyContent:"right", gap:"30%"}}>
           {userPhotoURL ? (
             <Avatar
               src={userPhotoURL}
@@ -349,7 +349,7 @@ export default function DashboardAB() {
             </MenuItem>
             <MenuItem 
               style={{fontWeight:700, color:"red", fontFamily:'Segoe UI', marginBottom:1}} 
-              onClick={() =>{ 
+              onClick={() =>{
                 setShowLogoutModal(true);
               }}
             >
@@ -357,6 +357,23 @@ export default function DashboardAB() {
             </MenuItem>
           </Menu>
         </div>
+      </div>
+      {/* Centro: Titolo */}
+      <div
+        style={{
+          position: "absolute",
+          left: "50%",
+          paddingTop: 5,
+          transform: "translateX(-50%)",
+          textAlign: "center",
+          whiteSpace: "nowrap",
+          overflow: "hidden",
+          textOverflow: "ellipsis",
+          maxWidth: "70%",
+          zIndex: 1001,
+        }}
+      >
+        <h1 style={{ color: "white", margin: 0 }}>{dataDAzienda.B11}</h1>
       </div>
 
       {/* Indice laterale */}
