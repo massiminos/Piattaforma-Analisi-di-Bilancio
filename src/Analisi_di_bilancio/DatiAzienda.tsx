@@ -18,22 +18,8 @@ import {macroSettore, subSettore, microSettore, settoreOptions, principaliBorse}
 
 
 const helperTexts: Partial<Record<keyof typeof Dati_Azienda, string>> = {
-  B11: "",
-  B12: "",
-  B13: "",
-  B14: "",
-  B15: "",
   B16: "Digita un numero (es. 10000.50): sarà automaticamente convertito nel formato € 10.000,50.",
-  B17: "",
-  B18: "", 
-  B19: "",
-  B20: "",
-  B21: "",
-  B22: "",
-  B23: "",
-  B24: "Numero di dipendenti (solo numeri interi)",
-  B25: "",
-  B26: "",
+  B24: "Digita un numero.",
 };
 
 // Mappa dei tipi attesi per ciascun campo
@@ -134,16 +120,37 @@ export default function DatiAzienda({
             const isDate = fieldTypes[key] === "date";
             const isSelect =  key === "B20"|| key === "B21"|| key === "B22"|| key === "B23" || key === "B25" || key === "B26";
 
-            const displayValue = isEditingCurrency
-              ? formatCurrency(Number(value))
-              : String(value ?? "");
+            const cleanNumber = (val: string) => {
+              if (val.includes(",")) {
+                return val.replace(/\./g, "").replace(",", ".");
+              } else {
+                return val;
+              }
+            };
+
+            const displayValue =
+              key === "B16" && editingField !== key
+                ? formatCurrency(Number(value))
+                : key === "B24"
+                  ? editingField === "B24"
+                    ? String(value ?? "")
+                    : (() => {
+                      const valStr = String(value ?? "");
+                      const num = parseFloat(cleanNumber(valStr));
+                      if (isNaN(num)) return "";
+
+                      return num % 1 === 0
+                        ? String(num)
+                        : num.toFixed(2).replace(".", ",");
+                    })()
+                  : String(value ?? "");
 
             let isValid = true;
             if (key === "B16") {
               // Consente numeri con punto o virgola
-              isValid = /^(\d{1,3}(\.\d{3})*|\d+)([.,]\d{1,2})?$/.test(String(value));
+              isValid = /^(\d{1,3}(\.\d{3})*|\d+)([.,]\d+)?$/.test(String(value));
             } else if (key === "B24") {
-              isValid = /^\d*$/.test(String(value));
+              isValid = /^(\d{1,3}(\.\d{3})*|\d+)?([.,]\d+)?$/.test(String(value));
             }
 
             const helperText = (key === "B16" || key === "B24") && !isValid ? helperTexts[key] : "";
