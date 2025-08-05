@@ -350,7 +350,6 @@ export default function DashboardAB() {
             <MenuItem 
               style={{fontWeight:700, color:"red", fontFamily:'Segoe UI', marginBottom:1}} 
               onClick={() =>{ 
-                restState(),
                 setShowLogoutModal(true);
               }}
             >
