@@ -427,7 +427,6 @@ const  Bilancio_D131 = Bilancio_D132+Bilancio_D153+formData.D158+Bilancio_D159+B
 const  CE_Riclassificato_B5 = formData.B221+formData.B226;
 const  CE_Riclassificato_D6 = Bilancio_B249+Bilancio_B253+(formData.B271>0?formData.B271:0);
 const  CE_Riclassificato_B9 = CE_Riclassificato_B5+formData.B222+formData.B223+formData.B224;
-
 // adattati= Andamenti_F79 e Andamenti_B79 --> CE_Riclassificato_B9
 const  Andamenti_F79 = formData.C221+formData.C226+formData.C222+formData.C223+formData.C224;
 const  Andamenti_B79 = formData.D221+formData.D226+formData.D222+formData.D223+formData.D224;
@@ -444,7 +443,7 @@ const  Andamenti_F69 = Andamenti_F68-(formData.C244+formData.C245)-Bilancio_C238
 const  Andamenti_B69 = Andamenti_B68-(formData.D244+formData.D245)-Bilancio_D238;
 //------------
 const  CE_Riclassificato_B27 = Bilancio_B297/Bilancio_B132;
-// adattati= Andamenti_C62 e Andamenti_C62 --> CE_Riclassificato_B27
+// adattati= Andamenti_F62 e Andamenti_B62 --> CE_Riclassificato_B27
 const  Andamenti_F62 = Bilancio_C297/Bilancio_C132;
 const  Andamenti_B62 = Bilancio_D297/Bilancio_D132;
 //------------
@@ -483,10 +482,10 @@ const  CE_Riclassificato_D30= Bilancio_B238/Bilancio_B228;
 const  Andamenti_F75 = Bilancio_C238/Bilancio_C228;
 const  Andamenti_B75 = Bilancio_D238/Bilancio_D228;
 //------------
-const  CE_Riclassificato_B31= Bilancio_B266/(formData.B171);
+const  CE_Riclassificato_B31 = Bilancio_B266/Bilancio_B169; 
 // adattati= Andamenti_F66 e Andamenti_B66 --> CE_Riclassificato_B31
-const  Andamenti_F66 = Bilancio_C266/(formData.C171);
-const  Andamenti_B66 = Bilancio_D266/(formData.D171);
+const  Andamenti_F66 = Bilancio_C266/Bilancio_C169;
+const  Andamenti_B66 = Bilancio_D266/Bilancio_D169;
 //------------
 const  CE_Riclassificato_D31 = formData.B246/Bilancio_B228;
 // adattati= Andamenti_F76 e Andamenti_B76 --> CE_Riclassificato_D31
@@ -546,10 +545,10 @@ const  SP_Riclasificato_B28 = formData.B127 + formData.B126 + formData.B125 + Bi
 const  Andamenti_F30 = formData.C127 + formData.C126 + formData.C125 + Bilancio_C116;
 const  Andamenti_B30 = formData.D127 + formData.D126 + formData.D125 + Bilancio_D116;
 //------------
-const  SP_Riclasificato_D28=formData.B170 + formData.B179 + (formData.B197 + formData.B200) + SP_Riclasificato_D32;
+const  SP_Riclasificato_D28 = formData.B170 + formData.B179 + (formData.B197 + formData.B200) + SP_Riclasificato_D32;
 // adattate= Andamenti_F34 e Andamenti_B34 --> SP_Riclasificato_D28
 const  Andamenti_F34 = (formData.C170 + formData.C179 + (formData.C197 + formData.C200) + Andamenti_help1F);
-const  Andamenti_B34 = (formData.D170 + formData.D179 + (formData.D197 + formData.D200) + Andamenti_help1F);
+const  Andamenti_B34 = (formData.D170 + formData.D179 + (formData.D197 + formData.D200) + Andamenti_help1B);
 //------------
 const  SP_Riclasificato_D39 = formData.B168 + formData.B174 + formData.B177 + formData.B180 + formData.B183 + formData.B186 + formData.B189 + formData.B192 + formData.B195 + formData.B204;
 //adattate= Andamenti_SPR_C_D39 e Andamenti_SPR_D_D39 --> SP_Riclasificato_D39
